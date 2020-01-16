@@ -185,6 +185,10 @@ spec:
         description: The IBM Cloud Kubernetes cluster name
       - name: clusterRegion
         description: The IBM Cloud Kubernetes cluster region
+      - name: clusterURL
+        description: The Managed OpenShift cluster URL
+      - name: clusterToken
+        description: The Managed OpenShift cluster login token
   steps:
     - name: clone-repo
       image: alpine/git
@@ -215,6 +219,10 @@ spec:
           value: $(inputs.params.clusterNamespace)
         - name: PIPELINE_KUBERNETES_CLUSTER_NAME
           value: $(inputs.params.cluster)
+        - name: URL
+          value: $(inputs.params.clusterURL)
+        - name: TOKEN
+          value: $(inputs.params.clusterToken)
       command: ["/bin/bash", "-c"]
       args:
         - set -e -o pipefail;
@@ -222,6 +230,7 @@ spec:
           $(ibmcloud ks cluster config --cluster "${PIPELINE_KUBERNETES_CLUSTER_NAME}" --export);
           while read line; do export $line; done < /artifacts/build.properties;
           cp /artifacts/build.properties .;
+          oc login $URL --token=$TOKEN;
           source pre-deploy-check.sh;
       volumeMounts:
         - mountPath: /artifacts
@@ -243,6 +252,10 @@ spec:
           value: $(inputs.params.clusterNamespace)
         - name: PIPELINE_KUBERNETES_CLUSTER_NAME
           value: $(inputs.params.cluster)
+        - name: URL
+          value: $(inputs.params.clusterURL)
+        - name: TOKEN
+          value: $(inputs.params.clusterToken)
       command: ["/bin/bash", "-c"]
       args:
         - set -e -o pipefail;
@@ -250,6 +263,7 @@ spec:
           $(ibmcloud ks cluster config --cluster "${PIPELINE_KUBERNETES_CLUSTER_NAME}" --export);
           while read line; do export $line; done < /artifacts/build.properties;
           cp /artifacts/build.properties .;
+          oc login $URL --token=$TOKEN;
           source deploy-to-kubernetes.sh;
       volumeMounts:
         - mountPath: /artifacts
