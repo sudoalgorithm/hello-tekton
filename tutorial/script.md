@@ -40,7 +40,7 @@ In this task, you create a toolchain and add the tools that you need for this tu
 
    b. Go to <a href="https://cloud.ibm.com/?cm_mmc=IBMBluemixGarageMethod-_-MethodSite-_-10-19-15::12-31-18-_-ibm-bluemix-website" target="_blank">cloud.ibm.com</a>. Open the menu in the upper-left corner and click **DevOps**. Click **Create a Toolchain**. Select **Build Your Own Toolchain**. 
    
-   [Blank Template](https://github.com/stevenjweaver/hello-tekton/tutorial/images/Blank_Template.png)
+   [Blank Template](./images/Blank_Template.png)
    
    c. If you already have an OpenShift cluster, go to <a href="https://cloud.ibm.com/?cm_mmc=IBMBluemixGarageMethod-_-MethodSite-_-10-19-15::12-31-18-_-ibm-bluemix-website" target="_blank">cloud.ibm.com</a>. Open the menu in the upper-left corner and click **OpenShift**. Click **Clusters** and click your cluster. On the cluster dashboard, click the **DevOps** tab and click **Create a Toolchain**. Select **Build Your Own Toolchain**. 
    
