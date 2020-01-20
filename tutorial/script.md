@@ -149,7 +149,7 @@ FOR FAST START, USE THESE VARIABLES: https://ibm.box.com/s/01tbzg1g7reeotcplx2l4
 
 16. Click **Save** and then **Close**. Your toolchain is now set up.
 
-    ![Environment Variables](./images/FS_Pipeline_Env.png)
+    ![Environment Variables](./images/FS_Pipeline_Env_v2.png)
 
 # Task 2: Explore the pipeline
 
