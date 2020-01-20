@@ -89,7 +89,7 @@ If you want to switch to a different account, click the profile avatar icon on t
 
    d. Click **Create Integration** to add the Delivery Pipeline to your toolchain.
 
-11. Click the Delivery Pipeline tile to open the Tekton Delivery Pipeline dashboard. The **Configure Pipeline** page will open. Select the **Definitions** tab and click **Add** to select your repository:
+7. Click the Delivery Pipeline tile to open the Tekton Delivery Pipeline dashboard. The **Configure Pipeline** page will open. Select the **Definitions** tab and click **Add** to select your repository:
 
    a. Specify the Git repo and URL that contains the Tekton pipeline definition and related artifacts. From the list, select the Git repo that you created earlier.
 
@@ -100,12 +100,12 @@ If you want to switch to a different account, click the profile avatar icon on t
    d. Click **Save**.
    
    ![Repository Definition](./images/Tekton_Repo_Definition.png)
-   
-12. Click the **Worker** tab and select the **IBM Managed workers in DALLAS** pipeline worker. If you are using a private pipeline worker, select the one that you want to use to run your Tekton pipeline on the associated cluster. 
+
+8. Click the **Worker** tab and select the **IBM Managed workers in DALLAS** pipeline worker. If you are using a private pipeline worker, select the one that you want to use to run your Tekton pipeline on the associated cluster. 
 
    ![Workers Definition](./images/FS_Pipeline_Worker.png)
 
-13. Click the **Triggers** tab and click **Add trigger** and click **Git Repository**. Associate the trigger with an event listener: 
+9. Click the **Triggers** tab and click **Add trigger** and click **Git Repository**. Associate the trigger with an event listener: 
 
    a. From the Repository list, select your repo.
 
@@ -113,17 +113,19 @@ If you want to switch to a different account, click the profile avatar icon on t
 
    c. Click **Save**.  
    
-   ![Manual Trigger Definition](./images/Tekton_Manual_Trigger.png)
+   ![Git Trigger Definition](./images/Tekton_Git_Trigger.png)
 
-14. On the **Triggers** tab, click **Add trigger** and click **Manual**. Associate that trigger with an event listener:
+10. On the **Triggers** tab, click **Add trigger** and click **Manual**. Associate that trigger with an event listener:
 
    a. Make sure that listener is selected in the EventListener field.
 
-   b. Click **Save**.  
+   b. Click **Save**. 
+   
+   ![Manual Trigger Definition](./images/Tekton_Manual_Trigger.png)
 
    **Note**: Manual triggers run when you click Run pipeline and select the trigger. Git Repository triggers run when the specified Git event type occurs for the specified Git repo and branch. The list of available event listeners is populated with the listeners that are defined in the pipeline code repo. 
 
-15. Click the **Environment properties** tab and define the environment properties for this tutorial. To add each property, click **Add property** and select **Text property** (unless specified otherwise below). Add these properties:
+11. Click the **Environment properties** tab and define the environment properties for this tutorial. To add each property, click **Add property** and select **Text property** (unless specified otherwise below). Add these properties:
 
 apikey: Type the API key that you created earlier in this tutorial.
 cluster: Type the name of the OpenShift cluster that you created.
