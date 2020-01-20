@@ -44,22 +44,22 @@ In this task, you create a toolchain and add the tools that you need for this tu
    
    c. If you already have an OpenShift cluster, go to <a href="https://cloud.ibm.com/?cm_mmc=IBMBluemixGarageMethod-_-MethodSite-_-10-19-15::12-31-18-_-ibm-bluemix-website" target="_blank">cloud.ibm.com</a>. Open the menu in the upper-left corner and click **OpenShift**. Click **Clusters** and click your cluster. On the cluster dashboard, click the **DevOps** tab and click **Create a Toolchain**. Select **Build Your Own Toolchain**. 
    
-**Tip:** For instructions to navigate to the toolchain templates and select a toolchain to create, see <a href="https://cloudcontent.mybluemix.net/cloud/garage/tutorials/toolchain_nav" target="_blank">Navigating to the toolchain templates</a>.
+   **Tip:** For instructions to navigate to the toolchain templates and select a toolchain to create, see <a href="https://cloudcontent.mybluemix.net/cloud/garage/tutorials/toolchain_nav" target="_blank">Navigating to the toolchain templates</a>.
 
 2. On the "Build your own toolchain" page, review the default information for the toolchain settings. The toolchain's name identifies it in IBM Cloud. Make sure that the toolchain's name is unique within IBM Cloud. Each toolchain is associated with a specific region and resource group. From the menus on the page, select the region and resource group where you want to create the toolchain. You can have up to 200 toolchains per resource group. 
 
 
-**Note**: In order to use the IBM Managed pipeline worker, you must select Dallas as the region for the toolchain.
+   **Note**: In order to use the IBM Managed pipeline worker, you must select Dallas as the region for the toolchain.
 
    ![Select Region](./images/FS_Toolchain_Setup.png)
 
-If you want to switch to a different account, click the profile avatar icon on the banner and select the account. For the purposes of this lab, make sure the Dallas region is selected.
+   If you want to switch to a different account, click the profile avatar icon on the banner and select the account. For the purposes of this lab, make sure the Dallas region is selected.
 
-3.  Click **Create**. The blank toolchain is created.
+3. Click **Create**. The blank toolchain is created.
 
    ![Blank Toolchain](./images/FS_Toolchain_Blank.png)
 
-4.  Click **Add a Tool** and select **Git Repos and Issue Tracking**.
+4. Click **Add a Tool** and select **Git Repos and Issue Tracking**.
 
    ![Git Repos Tile](./images/Add_Tool_Git.png)
 
@@ -73,11 +73,11 @@ If you want to switch to a different account, click the profile avatar icon on t
 
    d. Click **Create Integration**. Tiles for Git Issues and Git Code are added to your toolchain.
 
-5.   Return to your toolchain's overview page.
+5. Return to your toolchain's overview page.
 
 **Note**: For this tutorial, we will be using the managed pipeline worker provided by the Continuous Delivery service in Dallas. If you would prefer to create your own private pipeline worker, you can follow the steps in the Optional Task 3 below.
 
-6.   Click **Add a Tool** and click **Delivery Pipeline**.
+6. Click **Add a Tool** and click **Delivery Pipeline**.
 
    a. Type a name for your new pipeline.
 
