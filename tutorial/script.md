@@ -69,7 +69,7 @@ In this task, you create a toolchain and add the tools that you need for this tu
 
    c. Make sure that the **Make this repository private** checkbox is *unchecked*, and the **Track deployment of code changes** checkbox is *checked*. 
 
-   ![Git Repo Settings](./images/FS_Git_Settings.png)
+   ![Git Repo Settings](./images/FS_Git_Settings_v2.png)
 
    d. Click **Create Integration**. Tiles for Git Issues and Git Code are added to your toolchain.
 
