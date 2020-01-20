@@ -264,7 +264,6 @@ spec:
           if which oc > /dev/null && ibmcloud ks cluster get "${PIPELINE_KUBERNETES_CLUSTER_NAME}" --json | jq -e '.type=="openshift"' > /dev/null; then oc login -u apikey -p "${IBMCLOUD_API_KEY}" ; fi;
           while read line; do export $line; done < /artifacts/build.properties;
           cp /artifacts/build.properties .;
-          oc login $URL --token=$TOKEN;
           source deploy-to-kubernetes.sh;
       volumeMounts:
         - mountPath: /artifacts
