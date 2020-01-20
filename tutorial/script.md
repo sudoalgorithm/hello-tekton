@@ -63,38 +63,68 @@ If you want to switch to a different account, click the profile avatar icon on t
 
    ![Git Repos Tile](./images/Add_Tool_Git.png)
 
-From the Repository type list, select **Clone**.
+   a. From the Repository type list, select **Clone**.
 
-In the Source repository URL field, type https://github.com/stevenjweaver/hello-tekton.
+   b. In the Source repository URL field, type https://github.com/stevenjweaver/hello-tekton.
 
-Uncheck the Make this repository private checkbox, and Check the Track deployment of code changes checkbox.  
+   c. Make sure that the **Make this repository private** checkbox is *unchecked*, and the **Track deployment of code changes** checkbox is *checked*. 
 
-Click Create Integration. Tiles for Git Issues and Git Code are added to your toolchain.
+   ![Git Repo Settings](./images/FS_Git_Settings.png)
+
+   d. Click **Create Integration**. Tiles for Git Issues and Git Code are added to your toolchain.
 
 5.   Return to your toolchain's overview page.
 
+**Note**: For this tutorial, we will be using the managed pipeline worker provided by the Continuous Delivery service in Dallas. If you would prefer to create your own private pipeline worker, you can follow the steps in the Optional Task 3 below.
 
-Note: For this tutorial, we will be using the managed pipeline worker provided by the Continuous Delivery service in Dallas. If you would prefer to create your own private pipeline worker, you can follow the steps in the Optional Task 3 below.
+6.   Click **Add a Tool** and click **Delivery Pipeline**.
 
+   a. Type a name for your new pipeline.
 
-6.   Click Add a Tool and click Delivery Pipeline.
-a. Type a name for your new pipeline.
-b. Click Tekton.   c. Make sure that the Show apps in the View app menu checkbox is selected. All the apps that your pipeline creates are shown in the View App list on the toolchain's Overview page.
-d. Click Create Integration to add the Delivery Pipeline to your toolchain.
-11. Click the Delivery Pipeline tile to open the Tekton Delivery Pipeline dashboard. The Configure Pipeline page will open. Select the Definitions tab and click Add to select your repository:
-Specify the Git repo and URL that contains the Tekton pipeline definition and related artifacts. From the list, select the Git repo that you created earlier.
-Select the branch in your Git repo that you want to use. For this tutorial, use the default value.
-Specify the path to your pipeline definition within the Git repo. You can reference a specific definition within the same repo. For this tutorial, use the default value.  
-Click Save.
-12. Click the Worker tab and select the "IBM Managed workers in DALLAS" pipeline worker. If you are using a private pipeline worker, select the one that you want to use to run your Tekton pipeline on the associated cluster.   
-13. Click the Triggers tab and click Add trigger and click Git Repository. Associate the trigger with an event listener: 
-From the Repository list, select your repo.
-Select the When a commit is pushed checkbox, and make sure that listener is selected in the EventListener field.
-Click Save.  
-14. On the Triggers tab, click Add trigger and click Manual. Associate that trigger with an event listener:
-Make sure that listener is selected in the EventListener field.
-Click Save.  Note: Manual triggers run when you click Run pipeline and select the trigger. Git Repository triggers run when the specified Git event type occurs for the specified Git repo and branch. The list of available event listeners is populated with the listeners that are defined in the pipeline code repo. 
-15. Click the Environment properties tab and define the environment properties for this tutorial. To add each property, click Add property and click Text property. Add these properties:
+   b. Select **Tekton** from the **Pipeline type** dropdown.  
+   
+   ![Select Tekton Pipeline](./images/Tekton_Select.png)
+   
+   c. Make sure that the **Show apps in the View app menu** checkbox is selected. All the apps that your pipeline creates are shown in the View App list on the toolchain's Overview page.
+
+   d. Click **Create Integration** to add the Delivery Pipeline to your toolchain.
+
+11. Click the Delivery Pipeline tile to open the Tekton Delivery Pipeline dashboard. The **Configure Pipeline** page will open. Select the **Definitions** tab and click **Add** to select your repository:
+
+   a. Specify the Git repo and URL that contains the Tekton pipeline definition and related artifacts. From the list, select the Git repo that you created earlier.
+
+   b. Select the branch in your Git repo that you want to use. For this tutorial, use the default value.
+
+   c. Specify the path to your pipeline definition within the Git repo. You can reference a specific definition within the same repo. For this tutorial, use the default value.  
+
+   d. Click **Save**.
+   
+   ![Repository Definition](./images/Tekton_Repo_Definition.png)
+   
+12. Click the **Worker** tab and select the **IBM Managed workers in DALLAS** pipeline worker. If you are using a private pipeline worker, select the one that you want to use to run your Tekton pipeline on the associated cluster. 
+
+   ![Workers Definition](./images/FS_Pipeline_Worker.png)
+
+13. Click the **Triggers** tab and click **Add trigger** and click **Git Repository**. Associate the trigger with an event listener: 
+
+   a. From the Repository list, select your repo.
+
+   b. Select the **When a commit is pushed** checkbox, and make sure that *listener* is selected in the EventListener field.
+
+   c. Click **Save**.  
+   
+   ![Manual Trigger Definition](./images/Tekton_Manual_Trigger.png)
+
+14. On the **Triggers** tab, click **Add trigger** and click **Manual**. Associate that trigger with an event listener:
+
+   a. Make sure that listener is selected in the EventListener field.
+
+   b. Click **Save**.  
+
+   **Note**: Manual triggers run when you click Run pipeline and select the trigger. Git Repository triggers run when the specified Git event type occurs for the specified Git repo and branch. The list of available event listeners is populated with the listeners that are defined in the pipeline code repo. 
+
+15. Click the **Environment properties** tab and define the environment properties for this tutorial. To add each property, click **Add property** and select **Text property** (unless specified otherwise below). Add these properties:
+
 apikey: Type the API key that you created earlier in this tutorial.
 cluster: Type the name of the OpenShift cluster that you created.
 clusterURL: Type the URL of the Openshift cluster that you saved when you copied the OpenShift login command.
