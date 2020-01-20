@@ -127,30 +127,31 @@ In this task, you create a toolchain and add the tools that you need for this tu
 
 11. Click the **Environment properties** tab and define the environment properties for this tutorial. To add each property, click **Add property** and select **Text property** (unless specified otherwise below). Add these properties:
 
-    apikey: Type the API key that you created earlier in this tutorial.
+    * `apikey`: Type the API key that you created earlier in this tutorial. (You can make this a **Secure Property** if you would like to hide the API Key)
     
-    cluster: Type the name of the OpenShift cluster that you created.
+    * `cluster`: Type the name of the OpenShift cluster that you created.
     
-    clusterURL: Type the URL of the Openshift cluster that you saved when you copied the OpenShift login command.
+    * `clusterURL`: Type the URL of the Openshift cluster that you saved when you copied the OpenShift login command.
     
-    clusterToken: Copy and paste the token that you saved when you copied the OpenShift login command.
+    * `clusterToken`: Copy and paste the token that you saved when you copied the OpenShift login command. (You can make this a **Secure Property** if you would like to hide the token)
     
-    clusterNamespace: Type the namespace in your cluster where the app will be deployed. The default is prod.
+    * `clusterNamespace`: Type the namespace in your cluster where the app will be deployed. The default is prod.
     
-    clusterRegion: Type the region where your OpenShift cluster is located. The default is us-south.
+    * `clusterRegion`: Type the region where your OpenShift cluster is located. The default is us-south.
     
-    registryNamespace: Type the IBM Cloud Container Registry namespace where the app image will be built and stored. To use an existing namespace, use the CLI and run ibmcloud cr namespace-list to identify all your current namespaces. 
+    * `registryNamespace`: Type the IBM Cloud Container Registry namespace where the app image will be built and stored. To use an existing namespace, use the CLI and run ibmcloud cr namespace-list to identify all your current namespaces. 
     
-    registryRegion: Type the region where your IBM Cloud Container Registry is located. The default is US-South. To find your     registry region, use the CLI and run ibmcloud cr region.
+    * `registryRegion`: Type the region where your IBM Cloud Container Registry is located. The default is US-South. To find your registry region, use the CLI and run ibmcloud cr region.
     
-    repository: Type the source Git repository where your resources are cloned. The default is https://github.com/open-toolchain/hello-tekton. Change this value if you're forking this repo. 
+    * `repository`: Type the source Git repository where your resources are cloned. The default is <a href="https://github.com/open-toolchain/hello-tekton" target="_blank">https://github.com/stevenjweaver/hello-tekton</a>. Change this value if you're forking this repo. 
 
 FOR FAST START, USE THESE VARIABLES: https://ibm.box.com/s/01tbzg1g7reeotcplx2l403ryhy2gz83 
 
-16. Click Save and click Close. Your toolchain is now set up.
+16. Click **Save** and then **Close**. Your toolchain is now set up.
+
+    ![Environment Variables](./images/FS_Pipeline_Env.png)
 
 # Task 2: Explore the pipeline
-
 
 With a Tekton-based delivery pipeline, you can automate the continuous building, testing, and deployment of your apps. The Tekton Delivery Pipeline dashboard displays an empty table until at least one Tekton pipeline runs. After a Tekton pipeline runs, either manually or as the result of external Git events, the table lists the run, its status, and the last updated time of the run definition.
 
