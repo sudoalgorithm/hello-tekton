@@ -153,36 +153,57 @@ FOR FAST START, USE THESE VARIABLES: https://ibm.box.com/s/01tbzg1g7reeotcplx2l4
 
 # Task 2: Explore the pipeline
 
-With a Tekton-based delivery pipeline, you can automate the continuous building, testing, and deployment of your apps. The Tekton Delivery Pipeline dashboard displays an empty table until at least one Tekton pipeline runs. After a Tekton pipeline runs, either manually or as the result of external Git events, the table lists the run, its status, and the last updated time of the run definition.
+With a Tekton-based delivery pipeline, you can automate the continuous building, testing, and deployment of your apps. The **Tekton Delivery Pipeline** dashboard displays an empty table until at least one Tekton pipeline runs. After a Tekton pipeline runs, either manually or as the result of external Git events, the table lists the run, its status, and the last updated time of the run definition.
 
+To run the manual trigger that you set up in the previous task, click **Run pipeline** and select the name of the manual trigger that you created. The pipeline starts to run and you can see the progress on the dashboard. 
 
-To run the manual trigger that you set up in the previous task, click Run pipeline and select the name of the manual trigger that you created. The pipeline starts to run and you can see the progress on the dashboard. 
-
+   ![Run Pipeline](./images/FS_Run_Pipeline.png)
 
 Pipeline runs can be in any of the following states:
-Pending: The PipelineRun definition is queued and waiting to run.
-Running: The PipelineRun definition is running in the cluster.
-Succeeded: The PipelineRun definition was successfully completed in the cluster.
-Failed: The PipelineRun definition run failed. Review the log file for the run to determine the cause.  
+
+* **Pending**: The PipelineRun definition is queued and waiting to run.
+
+* **Running**: The PipelineRun definition is running in the cluster.
+
+* **Succeeded**: The PipelineRun definition was successfully completed in the cluster.
+
+* **Failed**: The PipelineRun definition run failed. Review the log file for the run to determine the cause.  
+
+   ![Pipeline Dashboard](./images/FS_Pipeline_Dashboard.png)
+
 For more information about a selected run, click any row in the table. You view the Task definition and the steps in each PipelineRun definition. You can also view the status, logs, and details of each Task definition and step, and the overall status of the PipelineRun definition.
   
+   ![Pipeline Details](./images/Pipeline_Details.png)
 
+The pipeline definition is stored in the `pipeline.yaml` file in the `.tekton` folder of your Git repository. Each task has a separate section of this file. The steps for each task are defined in the `tasks.yaml` file.
 
-The pipeline definition is stored in the pipeline.yaml file in the .tekton folder of your Git repository. Each task has a separate section of this file. The steps for each task are defined in the tasks.yaml file.
-Review the pipeline-build-task. The task consists of a git clone of the repository followed by two steps:
-pre-build-check: This step checks for the mandatory Dockerfile and runs a lint tool. It then checks the registry current plan and quota before it creates the image registry namespace if needed.
-build-docker-image: This step creates the Docker image by using the IBM Cloud Container Registry build service through the ibmcloud cr build CLI script. The script stores the output image into the private IBM Cloud Container Registry and copies other app scripts with the build results into the ARCHIVE_DIR folder.
-Review the pipeline-validate-task. The task consists of a git clone of the repository, followed by the check-vulnerabilities step. This step runs the IBM Cloud Vulnerability Advisor on the image to check for known vulnerabilities. If it finds a vulnerability, the job fails, preventing the image from being deployed. This safety feature prevents apps with security holes from being deployed. The image has no vulnerabilities, so it passes. In this tutorial template, the default configuration of the job is to not block on failure.
-Review the pipeline-deploy-task. The task consists of a git clone of the repository followed by two steps:
-pre-deploy-check: This step checks whether the IBM Container Service cluster is ready and has a namespace that is configured with access to the private image registry by using an IBM Cloud API Key. This step also configures the Helm Tiller service to later run a deployment with Helm.
-deploy-to-kubernetes: This step checks for cluster readiness and namespace existence, configures the cluster namespace, updates the deployment.yml manifest file, and grants access to the private image registry. It also sets environment variables and uses the deployment manifest file to deploy the app into the Kubernetes cluster.
-After all the steps in the pipeline are completed, a green status is shown for each task. Click the deploy-to-kubernetes step and click the Logs tab to see the successful completion of this step.  
-Scroll to the end of the log. The DEPLOYMENT SUCCEEDED message is shown at the end of the log.  
-Click the URL to see the running application.  
+1. Review the **pipeline-build-task**. The task consists of a git clone of the repository followed by two steps:
 
+   * pre-build-check: This step checks for the mandatory Dockerfile and runs a lint tool. It then checks the registry current plan and quota before it creates the image registry namespace if needed.
 
-Task 3 (Optional): Private Pipeline Workers
+   * build-docker-image: This step creates the Docker image by using the IBM Cloud Container Registry build service through the `ibmcloud cr build` CLI script. The script stores the output image into the private IBM Cloud Container Registry and copies other app scripts with the build results into the `ARCHIVE_DIR` folder.
+   
+2. Review the **pipeline-validate-task**. The task consists of a git clone of the repository, followed by the check-vulnerabilities step. This step runs the IBM Cloud Vulnerability Advisor on the image to check for known vulnerabilities. If it finds a vulnerability, the job fails, preventing the image from being deployed. This safety feature prevents apps with security holes from being deployed. The image has no vulnerabilities, so it passes. In this tutorial template, the default configuration of the job is to not block on failure.
 
+3. Review the **pipeline-deploy-task**. The task consists of a git clone of the repository followed by two steps:
+
+   * pre-deploy-check: This step checks whether the IBM Container Service cluster is ready and has a namespace that is configured with access to the private image registry by using an IBM Cloud API Key. This step also configures the Helm Tiller service to later run a deployment with Helm.
+
+   * deploy-to-kubernetes: This step checks for cluster readiness and namespace existence, configures the cluster namespace, updates the `deployment.yml` manifest file, and grants access to the private image registry. It also sets environment variables and uses the deployment manifest file to deploy the app into the Kubernetes cluster.
+
+4. After all the steps in the pipeline are completed, a green status is shown for each task. Click the deploy-to-kubernetes step and click the Logs tab to see the successful completion of this step.  
+
+   ![Tekton Success](./images/Tekton_Success.png)
+
+5. Scroll to the end of the log. The DEPLOYMENT SUCCEEDED message is shown at the end of the log.  
+
+   ![Tekton Deployment Success](./images/Tekton_Deployment_Success.png)
+
+6. Click the URL to see the running application.  
+
+   ![Running App](./images/Tekton_App.png)
+
+# Task 3 (Optional): Private Pipeline Workers
 
 Note that for this tutorial, we are using the Managed Pipeline Worker provided by the Continuous Delivery service in Dallas. If you have a cluster that is not accessible via the public network, you need to use a Private Pipeline worker. See the steps below to add a worker to your toolchain.
 
