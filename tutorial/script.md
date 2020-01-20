@@ -75,7 +75,7 @@ In this task, you create a toolchain and add the tools that you need for this tu
 
 5. Return to your toolchain's overview page.
 
-**Note**: For this tutorial, we will be using the managed pipeline worker provided by the Continuous Delivery service in Dallas. If you would prefer to create your own private pipeline worker, you can follow the steps in the Optional Task 3 below.
+   **Note**: For this tutorial, we will be using the managed pipeline worker provided by the Continuous Delivery service in Dallas. If you would prefer to create your own private pipeline worker, you can follow the steps in the Optional Task 3 below.
 
 6. Click **Add a Tool** and click **Delivery Pipeline**.
 
@@ -113,7 +113,7 @@ In this task, you create a toolchain and add the tools that you need for this tu
 
    c. Click **Save**.  
    
-   ![Git Trigger Definition](./images/Tekton_Git_Trigger.png)
+   ![Git Trigger Definition](./images/Tekton_Trigger.png)
 
 10. On the **Triggers** tab, click **Add trigger** and click **Manual**. Associate that trigger with an event listener:
 
