@@ -213,13 +213,13 @@ The pipeline definition is stored in the `pipeline.yaml` file in the `.tekton` f
 
    a. Type an integration name for the worker.
    
-   b. Create a Service ID API key by clicking **Create** next to the field. Type a name and description for the worker and click Create.  
+   b. Create a Service ID API key by clicking **Create** next to the field. Type a name and description for the worker and click **Create**.  
    
       ![Service ID](./images/Pipeline_Worker_ServiceID.png)
    
    c. Click **Create Integration**.
 
-2. Configure the pipeline worker: 
+2. Configure the pipeline worker. **Note:** These steps can be found in the Private Pipeline Worker "Getting Started" Section: 
 
    a. From the CLI, install the Delivery Pipeline Kubernetes Private Worker support:   
 
