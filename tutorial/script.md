@@ -1,10 +1,8 @@
 # Prerequisites
 
-**FOR THE FAST START LAB, AN OPENSHIFT CLUSTER WILL BE PROVIDED FOR YOU IF YOU DO NOT ALREADY HAVE ONE.** 
-
 1. You must have an **IBM Cloud account**. The account is free and provides access to everything that you need to develop, track, plan, and deploy apps. <a href="https://cloud.ibm.com/registration" target="_blank">Sign up for a trial</a>. The account requires an IBMid. If you don't have an IBMid, you can create one when you register.
 
-2. You need a Managed Red Hat OpenShift cluster. You can create it by using either the UI or the command-line interface (CLI).
+2. You need a **Managed Red Hat OpenShift cluster**. You can create it by using either the UI or the command-line interface (CLI).
 
    a. Go to the <a href="https://cloud.ibm.com/catalog?category=containers&search=kubernetes" target="_blank">Container Services catalog entry</a>. 
 
@@ -12,19 +10,7 @@
    
    c. On the Red Hat OpenShift Cluster page, click **Create**. On the "Create a new OpenShift cluster" page, select the options you would like, and click **Create Cluster**. For more information, see the <a href="https://cloud.ibm.com/docs/openshift?topic=openshift-getting-started" target="_blank">IBM Cloud documentation</a>. 
 
-3. You will need to identify the **OpenShift Cluster URL** and provide a **security token** for access to the cluster during the tutorial. To access your cluster:
-
-   a. From the left menu, select **OpenShift**.
-
-   b. Click on your cluster name to access the cluster dashboard.
-
-   c. Click the **OpenShift web console** button.
-
-   d. Click on your login profile in the top right corner, and select **Copy login command**. Paste this command into a text editor and save it, you will need the URL and token contained in the command later. The login command should look like this: 
-   
-       oc login <clusterURL> --token=<clusterToken>
-
-4. You need to create an **IBM Cloud API key**. To create a key, go to Manage-->Access--><a href="https://cloud.ibm.com/iam/apikeys?cm_mmc=IBMBluemixGarageMethod-_-MethodSite-_-10-19-15::12-31-18-_-api-keys" target="_blank">IBM Cloud API keys</a> and click **Create an IBM Cloud API key**. Enter a Name and Description pertaining to the key. 
+3. You need to create an **IBM Cloud API key**. To create a key, go to Manage-->Access--><a href="https://cloud.ibm.com/iam/apikeys?cm_mmc=IBMBluemixGarageMethod-_-MethodSite-_-10-19-15::12-31-18-_-api-keys" target="_blank">IBM Cloud API keys</a> and click **Create an IBM Cloud API key**. Enter a Name and Description pertaining to the key. 
 
    **Important**: Save the API key value by either copying or downloading it. You need it when you create your toolchain. For more information about creating a cluster by using the CLI, see the <a href="https://cloud.ibm.com/docs/containers?topic=containers-clusters#clusters_cli" target="_blank">Creating clusters with the IBM Cloud CLI</a> tutorial. For more information about the IBM Cloud Container Registry service, see the <a href="https://cloud.ibm.com/docs/services/Registry?topic=registry-index#index" target="_blank">IBM Cloud documentation</a>.
 
@@ -47,7 +33,6 @@ In this task, you create a toolchain and add the tools that you need for this tu
    **Tip:** For instructions to navigate to the toolchain templates and select a toolchain to create, see <a href="https://cloudcontent.mybluemix.net/cloud/garage/tutorials/toolchain_nav" target="_blank">Navigating to the toolchain templates</a>.
 
 2. On the "Build your own toolchain" page, review the default information for the toolchain settings. The toolchain's name identifies it in IBM Cloud. Make sure that the toolchain's name is unique within IBM Cloud. Each toolchain is associated with a specific region and resource group. From the menus on the page, select the region and resource group where you want to create the toolchain. You can have up to 200 toolchains per resource group. 
-
 
    **Note**: In order to use the IBM Managed pipeline worker, you must select Dallas as the region for the toolchain.
 
@@ -131,10 +116,6 @@ In this task, you create a toolchain and add the tools that you need for this tu
     
     * `cluster`: Type the name of the OpenShift cluster that you created.
     
-    * `clusterURL`: Type the URL of the Openshift cluster that you saved when you copied the OpenShift login command.
-    
-    * `clusterToken`: Copy and paste the token that you saved when you copied the OpenShift login command. (You can make this a **Secure Property** if you would like to hide the token)
-    
     * `clusterNamespace`: Type the namespace in your cluster where the app will be deployed. The default is prod.
     
     * `clusterRegion`: Type the region where your OpenShift cluster is located. The default is us-south.
@@ -145,11 +126,9 @@ In this task, you create a toolchain and add the tools that you need for this tu
     
     * `repository`: Type the source Git repository where your resources are cloned. The default is <a href="https://github.com/open-toolchain/hello-tekton" target="_blank">https://github.com/stevenjweaver/hello-tekton</a>. Change this value if you're forking this repo. 
 
-FOR FAST START, USE THESE VARIABLES: https://ibm.box.com/s/01tbzg1g7reeotcplx2l403ryhy2gz83 
-
 16. Click **Save** and then **Close**. Your toolchain is now set up.
 
-    ![Environment Variables](./images/FS_Pipeline_Env_v2.png)
+    ![Environment Variables](./images/Tekton_Env_v2.png)
 
 # Task 2: Explore the pipeline
 
