@@ -16,10 +16,6 @@ spec:
       description: the ibmcloud registry namespace
     - name: cluster
       description: The cluster name
-    - name: clusterURL
-      description: The Managed OpenShift cluster external URL
-    - name: clusterToken
-      description: The Managed OpenShift cluster login token
     - name: registryRegion
       description: the ibmcloud registry region
       default: us-south
@@ -76,10 +72,6 @@ spec:
           value: $(params.apikey)
         - name: cluster
           value: $(params.cluster)
-        - name: clusterURL
-          value: $(params.clusterURL)
-        - name: clusterToken
-          value: $(params.clusterToken)
         - name: clusterRegion
           value: $(params.clusterRegion)
         - name: clusterNamespace
