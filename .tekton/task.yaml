@@ -185,10 +185,6 @@ spec:
         description: The IBM Cloud Kubernetes cluster name
       - name: clusterRegion
         description: The IBM Cloud Kubernetes cluster region
-      - name: clusterURL
-        description: The Managed OpenShift cluster URL
-      - name: clusterToken
-        description: The Managed OpenShift cluster login token
   steps:
     - name: clone-repo
       image: alpine/git
@@ -219,10 +215,6 @@ spec:
           value: $(inputs.params.clusterNamespace)
         - name: PIPELINE_KUBERNETES_CLUSTER_NAME
           value: $(inputs.params.cluster)
-        - name: URL
-          value: $(inputs.params.clusterURL)
-        - name: TOKEN
-          value: $(inputs.params.clusterToken)
       command: ["/bin/bash", "-c"]
       args:
         - set -e -o pipefail;
@@ -252,10 +244,6 @@ spec:
           value: $(inputs.params.clusterNamespace)
         - name: PIPELINE_KUBERNETES_CLUSTER_NAME
           value: $(inputs.params.cluster)
-        - name: URL
-          value: $(inputs.params.clusterURL)
-        - name: TOKEN
-          value: $(inputs.params.clusterToken)
       command: ["/bin/bash", "-c"]
       args:
         - set -e -o pipefail;
