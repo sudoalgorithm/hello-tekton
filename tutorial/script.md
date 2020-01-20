@@ -205,20 +205,42 @@ The pipeline definition is stored in the `pipeline.yaml` file in the `.tekton` f
 
 # Task 3 (Optional): Private Pipeline Workers
 
-Note that for this tutorial, we are using the Managed Pipeline Worker provided by the Continuous Delivery service in Dallas. If you have a cluster that is not accessible via the public network, you need to use a Private Pipeline worker. See the steps below to add a worker to your toolchain.
+**Note:** For this tutorial, we are using the **Managed Pipeline Worker** provided by the Continuous Delivery service in Dallas. If you have a cluster that is not accessible via the public network, you need to use a **Private Pipeline worker**. See the steps below to add a worker to your toolchain. 
 
+1. Click **Add a Tool** and select **Delivery Pipeline Private Worker**. Private pipeline workers are the entities that run the pipeline stages. Typically, workers are used to access information that isn't publicly available. For example, you might use them to adhere to a security policy where jobs need to be run in non-public environments or to access a private repository. For more information about private workers, see see the documentation for using <a href="https://cloud.ibm.com/docs/ContinuousDelivery?topic=ContinuousDelivery-private-workers" target="_blank">Delivery Pipeline Private Workers</a>.
 
-Click Add a Tool and click Delivery Pipeline Private Worker. Private pipeline workers are the entities that run the pipeline stages. Typically, workers are used to access information that isn't publicly available. For example, you might use them to adhere to a security policy where jobs need to be run in non-public environments or to access a private repository. For more information about private workers, see Working with Delivery Pipeline Private Workers.   
-Type an integration name for the worker.
-Create a Service ID API key by clicking Create next to the field. Type a name and description for the worker and click Create.  c. Click Create Integration.
-Configure the pipeline worker: 
-From the CLI, install the Delivery Pipeline Kubernetes Private Worker support:   
-kubectl apply --filename "https://private-worker-service.us-south.devops.cloud.ibm.com/install"
-b.   Register a new worker in your cluster (example below. Copy the command provided in the Private Pipeline Worker "Getting Started" Section):   
-kubectl apply --filename "https://private-worker-service.us-south.devops.cloud.ibm.com/install/worker?serviceId=ServiceId-74efc386-0dda-42fb-ac73-7a433935872a&apikey=fcYkUis5kpX7QeMRQbDE9MVlwysjwGR0ntKVGkHFRBbL&name=myk8scluster"
-c.   Verify that the worker was created:
-kubectl get workeragent
-Note: You can also run these commands from your OpenShift cluster's web terminal. To access the web terminal, in IBM Cloud, open the menu in the upper-left corner and click OpsnShift. Click Clusters and click your cluster. In the upper-right corner, click Web Terminal and copy the commands into the new terminal window.
-8.   To verify that the private pipeline worker is configured correctly, click Delivery Pipeline Private Worker.
-Make sure that your registered worker is in the list:  
-9.   Return to your toolchain's overview page.
+   ![Private Worker Tile](./images/Add_Tool_Pipeline_Worker.png)
+
+   a. Type an integration name for the worker.
+   
+   b. Create a Service ID API key by clicking **Create** next to the field. Type a name and description for the worker and click Create.  
+   
+      ![Service ID](./images/Pipeline_Worker_ServiceID.png)
+   
+   c. Click **Create Integration**.
+
+2. Configure the pipeline worker: 
+
+   a. From the CLI, install the Delivery Pipeline Kubernetes Private Worker support:   
+
+       kubectl apply --filename "https://private-worker-service.us-south.devops.cloud.ibm.com/install"
+
+   b. Register a new worker in your cluster (example below. Copy the command provided in the Private Pipeline Worker "Getting Started" Section):   
+
+       kubectl apply --filename "https://private-worker-service.us-south.devops.cloud.ibm.com/install/worker?serviceId=ServiceId-74efc386-0dda-42fb-ac73-7a433935872a&apikey=fcYkUis5kpX7QeMRQbDE9MVlwysjwGR0ntKVGkHFRBbL&name=myk8scluster"
+
+   c. Verify that the worker was created:
+
+       kubectl get workeragent
+
+   **Note:**  You can also run these commands from your OpenShift cluster's web terminal. To access the web terminal, in IBM Cloud, open the menu in the upper-left corner and click **OpenShift**. Click **Clusters** and select your cluster. In the upper-right corner, click **Web Terminal** and copy the commands into the new terminal window.
+
+3. To verify that the private pipeline worker is configured correctly, click Delivery Pipeline Private Worker.
+
+   ![Pipeline Worker Tile](./images/Pipeline_Worker_Tile.png)
+
+   Make sure that your registered worker is in the list: 
+
+   ![Pipeline Registered workers](./images/Pipeline_Worker_Registered_Pool.png)
+
+4. Return to your toolchain's overview page.
