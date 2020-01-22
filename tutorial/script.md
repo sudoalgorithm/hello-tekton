@@ -10,15 +10,19 @@
    
    c. On the Red Hat OpenShift Cluster page, click **Create**. On the "Create a new OpenShift cluster" page, select the options you would like, and click **Create Cluster**. For more information, see the <a href="https://cloud.ibm.com/docs/openshift?topic=openshift-getting-started" target="_blank">IBM Cloud documentation</a>. 
    
-3. Once your cluster is created, you need to add a **registry namespace** either via the Web Console, or via the IBM Cloud CLI. 
+3. **Optional** Install the IBM Cloud and OpenShift CLIs. 
 
-   a. To install the CLI, see <a href="https://cloud.ibm.com/docs/cli?topic=cloud-cli-install-ibmcloud-cli" target="_blank">Installing the stand-alone IBM Cloud CLI</a>.
+   a. To install the **IBM Cloud CLI**, see <a href="https://cloud.ibm.com/docs/cli?topic=cloud-cli-install-ibmcloud-cli" target="_blank">Installing the stand-alone IBM Cloud CLI</a>.
    
-   b. From the CLI, type the following command: `ibmcloud cr namespace-add <namespace>` where `<namespace>` is your new registry namespace name.
-   
-   c. From the <a href="https://cloud.ibm.com/" target="_blank">IBM Cloud Web Console</a>, select **OpenShift** from the top left navigation menu, then select **Registry**. Click on **Namespaces** then **Create Namespace**.
+   b. To install the **OpenShift CLI**, see <a href="https://cloud.ibm.com/docs/openshift?topic=openshift-openshift-cli" target="_blank">Installing the OpenShift CLI</a>
 
-3. You need to create an **IBM Cloud API key**. To create a key, go to Manage-->Access--><a href="https://cloud.ibm.com/iam/apikeys?cm_mmc=IBMBluemixGarageMethod-_-MethodSite-_-10-19-15::12-31-18-_-api-keys" target="_blank">IBM Cloud API keys</a> and click **Create an IBM Cloud API key**. Enter a Name and Description pertaining to the key. 
+4. Once your cluster is created, you need to add a **registry namespace** either via the Web Console, or via the IBM Cloud CLI.
+   
+   a. To add a new namespace from the CLI, type the following command: `ibmcloud cr namespace-add <namespace>` where `<namespace>` is your new registry namespace name.
+   
+   b. Alternatively, from the <a href="https://cloud.ibm.com/" target="_blank">IBM Cloud Web Console</a>, select **OpenShift** from the top left navigation menu, then select **Registry**. Click on **Namespaces** then **Create Namespace**.
+
+4. You need to create an **IBM Cloud API key**. To create a key, go to Manage-->Access--><a href="https://cloud.ibm.com/iam/apikeys?cm_mmc=IBMBluemixGarageMethod-_-MethodSite-_-10-19-15::12-31-18-_-api-keys" target="_blank">IBM Cloud API keys</a> and click **Create an IBM Cloud API key**. Enter a Name and Description pertaining to the key. 
 
    **Important**: Save the API key value by either copying or downloading it. You need it when you create your toolchain. For more information about creating a cluster by using the CLI, see the <a href="https://cloud.ibm.com/docs/containers?topic=containers-clusters#clusters_cli" target="_blank">Creating clusters with the IBM Cloud CLI</a> tutorial. For more information about the IBM Cloud Container Registry service, see the <a href="https://cloud.ibm.com/docs/services/Registry?topic=registry-index#index" target="_blank">IBM Cloud documentation</a>.
 
@@ -124,13 +128,13 @@ In this task, you create a toolchain and add the tools that you need for this tu
     
     * `cluster`: Type the name of the OpenShift cluster that you created.
     
-    * `clusterNamespace`: Type the namespace in your cluster where the app will be deployed. The default is prod.
+    * `clusterNamespace`: Type the project in your OpenShift cluster where the app will be deployed. The default is `default`, but to see a list of your current projects, at a command line, type `oc project list'.
     
-    * `clusterRegion`: Type the region where your OpenShift cluster is located. The default is us-south.
+    * `clusterRegion`: Type the region where your OpenShift cluster is located. This will be the region in which you created your OpenShift cluster. To find your region, type `oc version` at a command line. The `Server` line will include the region as part of the cluster URL.
     
-    * `registryNamespace`: Type the IBM Cloud Container Registry namespace where the app image will be built and stored. To use an existing namespace, use the CLI and run ibmcloud cr namespace-list to identify all your current namespaces. 
+    * `registryNamespace`: Type the IBM Cloud Container Registry namespace where the app image will be built and stored. To use an existing namespace, use the CLI and run `ibmcloud cr namespace-list` to identify all your current namespaces. 
     
-    * `registryRegion`: Type the region where your IBM Cloud Container Registry is located. The default is US-South. To find your registry region, use the CLI and run ibmcloud cr region.
+    * `registryRegion`: Type the region where your IBM Cloud Container Registry is located. The default is US-South. To find your registry region, use the CLI and run `ibmcloud cr region`.
     
     * `repository`: Type the source Git repository where your resources are cloned. The default is <a href="https://github.com/open-toolchain/hello-tekton" target="_blank">https://github.com/stevenjweaver/hello-tekton</a>. Change this value if you're forking this repo. 
 
