@@ -9,6 +9,14 @@
    b. Click **Red Hat OpenShift Cluster**.
    
    c. On the Red Hat OpenShift Cluster page, click **Create**. On the "Create a new OpenShift cluster" page, select the options you would like, and click **Create Cluster**. For more information, see the <a href="https://cloud.ibm.com/docs/openshift?topic=openshift-getting-started" target="_blank">IBM Cloud documentation</a>. 
+   
+3. Once your cluster is created, you need to add a **registry namespace** either via the Web Console, or via the IBM Cloud CLI. 
+
+   a. To install the CLI, see <a href="https://cloud.ibm.com/docs/cli?topic=cloud-cli-install-ibmcloud-cli" target="_blank">Installing the stand-alone IBM Cloud CLI</a>.
+   
+   b. From the CLI, type the following command: `ibmcloud cr namespace-add <namespace>` where `<namespace>` is your new registry namespace name.
+   
+   c. From the <a href="https://cloud.ibm.com/" target="_blank">IBM Cloud Web Console</a>, select **OpenShift** from the top left navigation menu, then select **Registry**. Click on **Namespaces** then **Create Namespace**.
 
 3. You need to create an **IBM Cloud API key**. To create a key, go to Manage-->Access--><a href="https://cloud.ibm.com/iam/apikeys?cm_mmc=IBMBluemixGarageMethod-_-MethodSite-_-10-19-15::12-31-18-_-api-keys" target="_blank">IBM Cloud API keys</a> and click **Create an IBM Cloud API key**. Enter a Name and Description pertaining to the key. 
 
