@@ -1,8 +1,12 @@
 # Setup CI/CD Pipelines on Managed OpenShift with IBM Cloud Continuous Delivery
 
-**This tutorial is adapted from the IBM Garage Method tutorial <a href="" target="_blank">Develop a Kubernetes app by using Tekton delivery pipelines</a>, to work on IBM Cloud Managed OpenShift.**
+**This lab is adapted from the IBM Garage Method tutorial <a href="" target="_blank">Develop a Kubernetes app by using Tekton delivery pipelines</a>, to work on IBM Cloud Managed OpenShift.**
 
-# Prerequisites
+In this lab, you will create an open toolchain that includes a Tekton-based delivery pipeline. You then use the toolchain and DevOps practices to develop a simple "Hello World" web application (app) that you deploy to an <a href="https://www.ibm.com/cloud/openshift" target="_blank">IBM Cloud™ Managed OpenShift</a> cluster. 
+
+<a href="https://www.ibm.com/cloud/blog/tekton-a-modern-approach-to-continuous-delivery" target="_blank">Tekton</a> is an open source, vendor-neutral, Kubernetes-native framework that you can use to build, test, and deploy apps across a range of environments. Tekton provides a set of shared components for building <a href="https://www.ibm.com/cloud/learn/continuous-integration" target="_blank">continuous integration</a> and <a href="https://www.ibm.com/cloud/learn/continuous-delivery" target="_blank">continuous delivery</a> (CI/CD) systems. As an open source project, Tekton is managed by the <a href="https://cd.foundation/" target="_blank">Continuous Delivery Foundation (CDF)</a>. The goal is to modernize continuous delivery by providing industry specifications for pipelines, workflows, and other building blocks. With Tekton, you can build, test, and deploy across cloud providers or on-premises systems by abstracting the underlying implementation details. Tekton pipelines are built in to <a href="https://www.ibm.com/cloud/blog/announcements/build-and-deliver-using-tekton-enabled-pipelines" target="_blank">IBM Cloud™ Continuous Delivery</a>.
+
+## Prerequisites
 
 1. You must have an **IBM Cloud account**. The account is free and provides access to everything that you need to develop, track, plan, and deploy apps. <a href="https://cloud.ibm.com/registration" target="_blank">Sign up for a trial</a>. The account requires an IBMid. If you don't have an IBMid, you can create one when you register.
 
@@ -30,7 +34,7 @@
 
    **Important**: Save the API key value by either copying or downloading it. You need it when you create your toolchain. For more information about creating a cluster by using the CLI, see the <a href="https://cloud.ibm.com/docs/containers?topic=containers-clusters#clusters_cli" target="_blank">Creating clusters with the IBM Cloud CLI</a> tutorial. For more information about the IBM Cloud Container Registry service, see the <a href="https://cloud.ibm.com/docs/services/Registry?topic=registry-index#index" target="_blank">IBM Cloud documentation</a>.
 
-# Task 1: Create a Toolchain with Tekton Pipelines
+## Task 1: Create a Toolchain with Tekton Pipelines
 
 In this task, you create a toolchain and add the tools that you need for this tutorial. Before you begin, you need your API key and OpenShift cluster name.
 
@@ -146,7 +150,7 @@ In this task, you create a toolchain and add the tools that you need for this tu
 
     ![Environment Variables](./images/Tekton_Env_v2.png)
 
-# Task 2: Explore the pipeline
+## Task 2: Explore the pipeline
 
 With a Tekton-based delivery pipeline, you can automate the continuous building, testing, and deployment of your apps. The **Tekton Delivery Pipeline** dashboard displays an empty table until at least one Tekton pipeline runs. After a Tekton pipeline runs, either manually or as the result of external Git events, the table lists the run, its status, and the last updated time of the run definition.
 
@@ -198,7 +202,7 @@ The pipeline definition is stored in the `pipeline.yaml` file in the `.tekton` f
 
    ![Running App](./images/Tekton_App.png)
 
-# Task 3 (Optional): Private Pipeline Workers
+## Task 3 (Optional): Private Pipeline Workers
 
 **Note:** For this tutorial, we are using the **Managed Pipeline Worker** provided by the Continuous Delivery service in Dallas. If you have a cluster that is not accessible via the public network, you need to use a **Private Pipeline worker**. See the steps below to add a worker to your toolchain. 
 
