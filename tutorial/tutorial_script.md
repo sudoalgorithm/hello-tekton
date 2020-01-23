@@ -180,6 +180,8 @@ In this task, you create a toolchain and add the tools that you need for this tu
 14. Click **Save** and then **Close**. Your toolchain is now set up.
 
     ![Environment Variables](./images/Tekton_Env_v2.png)
+    
+## Task 2: Explore the Pipeline
 
 With a Tekton-based delivery pipeline, you can automate the continuous building, testing, and deployment of your apps. The **Tekton Delivery Pipeline** dashboard displays an empty table until at least one Tekton pipeline runs. After a Tekton pipeline runs, either manually or as the result of external Git events, the table lists the run, its status, and the last updated time of the run definition.
 
