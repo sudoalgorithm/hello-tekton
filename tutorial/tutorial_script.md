@@ -121,7 +121,17 @@ In this task, you create a toolchain and add the tools that you need for this tu
 
    ![Workers Definition](./images/FS_Pipeline_Worker.png)
 
-9. Click the **Triggers** tab and click **Add trigger** and click **Git Repository**. Associate the trigger with an event listener: 
+9. Create triggers to run your pipeline when you specify. **Manual** triggers run when you click Run pipeline and select the trigger. **Git Repository** triggers run when the specified Git event type occurs for the specified Git repo and branch. **Timed** triggers invoke the Tekton EventListener at the specified time. In all cases the list of available event listeners is populated with the listeners that are defined in the pipeline definition. 
+
+10. On the **Triggers** tab, click **Add trigger** and select **Manual**. Associate that trigger with an event listener:
+
+    a. Make sure that listener is selected in the EventListener field.
+
+    b. Click **Save**. 
+   
+    ![Manual Trigger Definition](./images/Tekton_Manual_Trigger.png)
+
+10. Click **Add trigger** and select **Git Repository**. Associate the trigger with an event listener: 
 
    a. From the Repository list, select your repo.
 
@@ -131,15 +141,15 @@ In this task, you create a toolchain and add the tools that you need for this tu
    
    ![Git Trigger Definition](./images/Tekton_Trigger.png)
 
-10. On the **Triggers** tab, click **Add trigger** and click **Manual**. Associate that trigger with an event listener:
+11. **OPTIONAL** Click **Add trigger** and select **Timed**. Type a CRON expression and specify the timezone for the trigger event to occur. The string is based on the UNIX crontab syntax and is a sequence of maximum five fields: minute, hour, day of the month, month and day of the week. Fields are separated by spaces in the format X X X X X. The following strings are examples:
 
-    a. Make sure that listener is selected in the EventListener field.
-
-    b. Click **Save**. 
+   * `* * * * *` - the trigger fires every minute.
    
-    ![Manual Trigger Definition](./images/Tekton_Manual_Trigger.png)
-
-    **Note**: Manual triggers run when you click Run pipeline and select the trigger. Git Repository triggers run when the specified Git event type occurs for the specified Git repo and branch. The list of available event listeners is populated with the listeners that are defined in the pipeline code repo. 
+   * `0 * * * *` - the trigger fires at the start of every hour.
+   
+   * `0 */2 * * *` - the trigger fires every 2 hours.
+   
+   * `0 9 8 * *` - the trigger fires at 9:00AM on the eighth day of every month.
 
 11. Click the **Environment properties** tab and define the environment properties for this tutorial. To add each property, click **Add property** and select **Text property** (unless specified otherwise below). Add these properties:
 
