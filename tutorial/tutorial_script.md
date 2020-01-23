@@ -2,9 +2,15 @@
 
 **This lab is adapted from the IBM Garage Method tutorial <a href="" target="_blank">Develop a Kubernetes app by using Tekton delivery pipelines</a>, to work on IBM Cloud Managed OpenShift.**
 
-In this lab, you will create an open toolchain that includes a Tekton-based delivery pipeline. You then use the toolchain and DevOps practices to develop a simple "Hello World" web application (app) that you deploy to an <a href="https://www.ibm.com/cloud/openshift" target="_blank">IBM Cloud™ Managed OpenShift</a> cluster. 
+<a href="https://www.ibm.com/cloud/blog/tekton-a-modern-approach-to-continuous-delivery" target="_blank">Tekton</a> is an open source, vendor-neutral, Kubernetes-native framework that you can use to build, test, and deploy apps across a range of environments. Tekton provides a set of shared components for building <a href="https://www.ibm.com/cloud/learn/continuous-integration" target="_blank">continuous integration</a> and <a href="https://www.ibm.com/cloud/learn/continuous-delivery" target="_blank">continuous delivery</a> (CI/CD) systems. As an open source project, Tekton is managed by the <a href="https://cd.foundation/" target="_blank">Continuous Delivery Foundation (CDF)</a>. The goal is to modernize continuous delivery by providing industry specifications for pipelines, workflows, and other building blocks. With Tekton, you can build, test, and deploy across cloud providers or on-premises systems by abstracting the underlying implementation details. Tekton pipelines are built into <a href="https://www.ibm.com/cloud/blog/announcements/build-and-deliver-using-tekton-enabled-pipelines" target="_blank">IBM Cloud™ Continuous Delivery</a>.
 
-<a href="https://www.ibm.com/cloud/blog/tekton-a-modern-approach-to-continuous-delivery" target="_blank">Tekton</a> is an open source, vendor-neutral, Kubernetes-native framework that you can use to build, test, and deploy apps across a range of environments. Tekton provides a set of shared components for building <a href="https://www.ibm.com/cloud/learn/continuous-integration" target="_blank">continuous integration</a> and <a href="https://www.ibm.com/cloud/learn/continuous-delivery" target="_blank">continuous delivery</a> (CI/CD) systems. As an open source project, Tekton is managed by the <a href="https://cd.foundation/" target="_blank">Continuous Delivery Foundation (CDF)</a>. The goal is to modernize continuous delivery by providing industry specifications for pipelines, workflows, and other building blocks. With Tekton, you can build, test, and deploy across cloud providers or on-premises systems by abstracting the underlying implementation details. Tekton pipelines are built in to <a href="https://www.ibm.com/cloud/blog/announcements/build-and-deliver-using-tekton-enabled-pipelines" target="_blank">IBM Cloud™ Continuous Delivery</a>.
+In this lab, you will create an open toolchain using IBM Cloud Continuous Delivery that includes Git Repos and Issue Tracking and a Tekton-based delivery pipeline. You then use the toolchain and DevOps practices to develop a simple "Hello World" web application (app) that you deploy to an <a href="https://www.ibm.com/cloud/openshift" target="_blank">IBM Cloud™ Managed OpenShift</a> cluster. 
+
+The pipeline builds the "Hello World" app into a container image that is stored in the IBM Cloud Container Registry. The image is checked for security issues using IBM Vulnerability Advisor before being deployed to your OpenShift Cluster. 
+
+   ![Lab Diagram](./images/Lab_Diagram.png)
+
+
 
 ## Prerequisites
 
