@@ -1,3 +1,7 @@
+# Setup CI/CD Pipelines on Managed OpenShift with IBM Cloud Continuous Delivery
+
+**This tutorial is adapted from the IBM Garage Method tutorial <a href="" target="_blank">Develop a Kubernetes app by using Tekton delivery pipelines</a>, to work on IBM Cloud Managed OpenShift.**
+
 # Prerequisites
 
 1. You must have an **IBM Cloud account**. The account is free and provides access to everything that you need to develop, track, plan, and deploy apps. <a href="https://cloud.ibm.com/registration" target="_blank">Sign up for a trial</a>. The account requires an IBMid. If you don't have an IBMid, you can create one when you register.
