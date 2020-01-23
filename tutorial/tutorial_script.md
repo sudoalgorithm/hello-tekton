@@ -253,7 +253,7 @@ To set up a Private Pipeline Worker, follow these steps:
    
    c. Click **Create Integration**.
 
-2. Configure the pipeline worker. **Note:** These steps can be found in the Private Pipeline Worker "Getting Started" Section: 
+2. Configure the pipeline worker. **Note:** These steps can be found in the Private Pipeline Worker "Getting Started" Section. For this lab, Pipeline Workers should not have to be installed in your OpenShift Cluster. They can be installed in an IBM Kubernetes Service free cluster or locally on your desktop using Docker Desktop.
 
    a. From the CLI, install the Delivery Pipeline Kubernetes Private Worker support:   
 
