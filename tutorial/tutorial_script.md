@@ -222,10 +222,24 @@ The pipeline definition is stored in the `pipeline.yaml` file in the `.tekton` f
 6. Click the URL to see the running application.  
 
    ![Running App](./images/Tekton_App.png)
+   
+**CONGRATULATIONS!** *Your lab is now complete. If you like, you can edit the source code in the Git repository and redeploy the application automatically using the Git Trigger you created earlier. For detailed steps on how to accomplish this task, please see the Garage Method tutorial task <a href="https://cloudcontent.mybluemix.net/cloud/garage/tutorials/develop-kubernetes-app-using-tekton-delivery-pipelines?task=3" Target="_blank">here</a>*.
 
 ## Task 3 (Optional): Private Pipeline Workers
 
 **Note:** For this tutorial, we are using the **Managed Pipeline Worker** provided by the Continuous Delivery service in Dallas. If you have a cluster that is not accessible via the public network, you need to use a **Private Pipeline worker**. See the steps below to add a worker to your toolchain. 
+
+With Delivery **Pipeline Private Workers**, toolchains can be enhanced with a private worker tool integration that allows pipeline stages to be configured to run on external Kubernetes environments. Supported platforms include the IBM Cloud Kubernetes Service, IBM Cloud Private, Docker on Desktop, or Red Hat OpenShift.
+
+There are several situations where private workers overcome the constraints of public continuous delivery pipeline workers. Obvious examples are the need for data from a private database or source repository that is not available publicly, the requirement for executing a long-running task, or to adhere to a security policy where jobs need to be run on non-public environments.
+
+In larger organisations, administrators can pre-set private workers on required Kubernetes clusters and make them available for development teams to use.
+
+The diagram below shows how Private or Managed Pipeline Workers may be used to deploy applications across multiple environments using IBM Cloud Continuous Delivery:
+
+   ![Private Worker Diagram](./images/Private_Worker_Diagram.png)
+   
+To set up a Private Pipeline Worker, follow these steps:
 
 1. Click **Add a Tool** and select **Delivery Pipeline Private Worker**. Private pipeline workers are the entities that run the pipeline stages. Typically, workers are used to access information that isn't publicly available. For example, you might use them to adhere to a security policy where jobs need to be run in non-public environments or to access a private repository. For more information about private workers, see see the documentation for using <a href="https://cloud.ibm.com/docs/ContinuousDelivery?topic=ContinuousDelivery-private-workers" target="_blank">Delivery Pipeline Private Workers</a>.
 
