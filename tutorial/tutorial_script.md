@@ -117,7 +117,7 @@ In this task, you create a toolchain and add the tools that you need for this tu
    
    ![Repository Definition](./images/Tekton_Repo_Definition.png)
 
-8. Click the **Worker** tab and select the **IBM Managed workers in DALLAS** pipeline worker. **Note:** If you are using a Private Pipeline Worker, select the one that you want to use to run your Tekton pipeline on the associated cluster. *For directions on setting up a Private Pipeline Worker, see the [Optional Task](#optional-task:-private-pipeline-workers) at the end of this lab.* 
+8. Click the **Worker** tab and select the **IBM Managed workers in DALLAS** pipeline worker. **Note:** If you are using a Private Pipeline Worker, select the one that you want to use to run your Tekton pipeline on the associated cluster. *For directions on setting up a Private Pipeline Worker, see the [Optional Task](#optional-task-private-pipeline-workers) at the end of this lab.* 
 
    ![Workers Definition](./images/FS_Pipeline_Worker.png)
 
