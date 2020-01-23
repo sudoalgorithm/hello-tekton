@@ -225,6 +225,8 @@ The pipeline definition is stored in the `pipeline.yaml` file in the `.tekton` f
    
 **CONGRATULATIONS!** *Your lab is now complete. If you like, you can edit the source code in the Git repository and redeploy the application automatically using the Git Trigger you created earlier. For detailed steps on how to accomplish this task, please see the Garage Method tutorial task <a href="https://cloudcontent.mybluemix.net/cloud/garage/tutorials/develop-kubernetes-app-using-tekton-delivery-pipelines?task=3" Target="_blank">here</a>*.
 
+---
+
 ## Task 3 (Optional): Private Pipeline Workers
 
 **Note:** For this tutorial, we are using the **Managed Pipeline Worker** provided by the Continuous Delivery service in Dallas. If you have a cluster that is not accessible via the public network, you need to use a **Private Pipeline worker**. See the steps below to add a worker to your toolchain. 
