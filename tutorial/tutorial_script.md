@@ -131,27 +131,27 @@ In this task, you create a toolchain and add the tools that you need for this tu
    
     ![Manual Trigger Definition](./images/Tekton_Manual_Trigger.png)
 
-10. Click **Add trigger** and select **Git Repository**. Associate the trigger with an event listener: 
+11. Click **Add trigger** and select **Git Repository**. Associate the trigger with an event listener: 
 
-   a. From the Repository list, select your repo.
+    a. From the Repository list, select your repo.
 
-   b. Select the **When a commit is pushed** checkbox, and make sure that *listener* is selected in the EventListener field.
+    b. Select the **When a commit is pushed** checkbox, and make sure that *listener* is selected in the EventListener field.
 
-   c. Click **Save**.  
+    c. Click **Save**.  
    
    ![Git Trigger Definition](./images/Tekton_Trigger.png)
 
-11. **OPTIONAL** Click **Add trigger** and select **Timed**. Type a CRON expression and specify the timezone for the trigger event to occur. The string is based on the UNIX crontab syntax and is a sequence of maximum five fields: minute, hour, day of the month, month and day of the week. Fields are separated by spaces in the format X X X X X. The following strings are examples:
+12. **OPTIONAL:** Click **Add trigger** and select **Timed**. Type a CRON expression and specify the timezone for the trigger event to occur. The string is based on the UNIX crontab syntax and is a sequence of maximum five fields: minute, hour, day of the month, month and day of the week. Fields are separated by spaces in the format X X X X X. The following strings are examples:
 
-   * `* * * * *` - the trigger fires every minute.
+    * `* * * * *` - the trigger fires every minute.
    
-   * `0 * * * *` - the trigger fires at the start of every hour.
+    * `0 * * * *` - the trigger fires at the start of every hour.
    
-   * `0 */2 * * *` - the trigger fires every 2 hours.
+    * `0 */2 * * *` - the trigger fires every 2 hours.
    
-   * `0 9 8 * *` - the trigger fires at 9:00AM on the eighth day of every month.
+    * `0 9 8 * *` - the trigger fires at 9:00AM on the eighth day of every month.
 
-11. Click the **Environment properties** tab and define the environment properties for this tutorial. To add each property, click **Add property** and select **Text property** (unless specified otherwise below). Add these properties:
+13. Click the **Environment properties** tab and define the environment properties for this tutorial. To add each property, click **Add property** and select **Text property** (unless specified otherwise below). Add these properties:
 
     * **apikey**: Type the API key that you created earlier in this tutorial. (You can make this a **Secure Property** if you would like to hide the API Key)
     
@@ -167,7 +167,7 @@ In this task, you create a toolchain and add the tools that you need for this tu
     
     * **repository**: Type the source Git repository where your resources are cloned. This is the Git repository we cloned when we build the toolchain.
 
-16. Click **Save** and then **Close**. Your toolchain is now set up.
+14. Click **Save** and then **Close**. Your toolchain is now set up.
 
     ![Environment Variables](./images/Tekton_Env_v2.png)
 
