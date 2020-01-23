@@ -10,7 +10,12 @@ The pipeline builds the "Hello World" app into a container image that is stored 
 
    ![Lab Diagram](./images/Lab_Diagram.png)
 
+## Objective
 
+The objectives of this lab are to:
+
+1. Learn how to setup and use open toolchains and Tekton-based delivery pipelines in IBM Cloud Continuous Delivery to ensure that development teams follow DevOps best practices and automate manual procedures to help increase app quality and reduce time-to-market.
+2. Learn how to use Tekton-based delivery pipelines in IBM Cloud Continuous Delivery to deploy an application to IBM Cloud Managed OpenShift.
 
 ## Prerequisites
 
